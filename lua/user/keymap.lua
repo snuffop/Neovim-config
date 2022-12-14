@@ -97,7 +97,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- Lazy Git Binding
-vim.keymap.set('n', 'gg', ':LazyGit<CR>')
+vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 
 
 -- vim: ts=2 sts=2 sw=2 et

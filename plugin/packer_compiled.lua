@@ -210,7 +210,7 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-sleuth"
   },
   vimwiki = {
-    config = { "\27LJ\2\nÆ\1\0\0\3\0\5\0\v6\0\0\0009\0\1\0)\1\0\0=\1\2\0006\0\0\0009\0\1\0004\1\3\0005\2\4\0>\2\1\1=\1\3\0K\0\1\0\1\0\5\tpath\30~/Nextcloud/Notes/vimwiki\14path_html\31~/Nextcloud/Notes/vimwiki/\16auto_export\3\1\bext\b.md\vsyntax\rmarkdown\17vimwiki_list\23vimwiki_global_ext\6g\bvim\0" },
+    config = { "\27LJ\2\nÆ\1\0\0\3\0\5\0\v6\0\0\0009\0\1\0)\1\0\0=\1\2\0006\0\0\0009\0\1\0004\1\3\0005\2\4\0>\2\1\1=\1\3\0K\0\1\0\1\0\5\bext\b.md\vsyntax\rmarkdown\14path_html\31~/Nextcloud/Notes/vimwiki/\16auto_export\3\1\tpath\30~/Nextcloud/Notes/vimwiki\17vimwiki_list\23vimwiki_global_ext\6g\bvim\0" },
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/vimwiki",
     url = "https://github.com/vimwiki/vimwiki"
@@ -220,7 +220,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: vimwiki
 time([[Config for vimwiki]], true)
-try_loadstring("\27LJ\2\nÆ\1\0\0\3\0\5\0\v6\0\0\0009\0\1\0)\1\0\0=\1\2\0006\0\0\0009\0\1\0004\1\3\0005\2\4\0>\2\1\1=\1\3\0K\0\1\0\1\0\5\tpath\30~/Nextcloud/Notes/vimwiki\14path_html\31~/Nextcloud/Notes/vimwiki/\16auto_export\3\1\bext\b.md\vsyntax\rmarkdown\17vimwiki_list\23vimwiki_global_ext\6g\bvim\0", "config", "vimwiki")
+try_loadstring("\27LJ\2\nÆ\1\0\0\3\0\5\0\v6\0\0\0009\0\1\0)\1\0\0=\1\2\0006\0\0\0009\0\1\0004\1\3\0005\2\4\0>\2\1\1=\1\3\0K\0\1\0\1\0\5\bext\b.md\vsyntax\rmarkdown\14path_html\31~/Nextcloud/Notes/vimwiki/\16auto_export\3\1\tpath\30~/Nextcloud/Notes/vimwiki\17vimwiki_list\23vimwiki_global_ext\6g\bvim\0", "config", "vimwiki")
 time([[Config for vimwiki]], false)
 -- Conditional loads
 time([[Conditional loading of telescope-fzf-native.nvim]], true)

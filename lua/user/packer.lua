@@ -69,21 +69,7 @@ require('packer').startup(function(use)
   use { 'Mofiqul/dracula.nvim' }
 
   -- VIM WIKI
-  use {
-      'vimwiki/vimwiki',
-      config = function()
-          vim.g.vimwiki_global_ext = 0
-          vim.g.vimwiki_list = {
-              {
-                  auto_export =  1,
-                  path_html = '~/Nextcloud/Notes/vimwiki/',
-                  path = '~/Nextcloud/Notes/vimwiki',
-                  syntax = 'markdown',
-                  ext = '.md',
-              }
-          }
-      end
-  }
+  use { 'vimwiki/vimwiki' }
 
   -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')

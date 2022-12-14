@@ -5,6 +5,7 @@ require "user.treesitter"
 require "user.lsp"
 require "user.cmp"
 require "user.ranger"
+require "user.vimwiki"
 
 
 --autocmd! BufRead,BufNewFile *.j2  call jinja#AdjustFiletype()
