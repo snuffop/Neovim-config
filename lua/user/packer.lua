@@ -71,6 +71,17 @@ require('packer').startup(function(use)
   -- VIM WIKI
   use { 'vimwiki/vimwiki' }
 
+  -- Markdown Preview
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  -- WAKATIME
+  use 'wakatime/vim-wakatime'
+
   -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
