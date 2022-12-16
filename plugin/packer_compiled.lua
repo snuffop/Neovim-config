@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neomutt.vim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/neomutt.vim",
+    url = "https://github.com/neomutt/neomutt.vim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/nvim-cmp",

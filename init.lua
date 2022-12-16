@@ -1,6 +1,7 @@
 require "user.packer"
 require "user.options"
 require "user.keymap"
+require "user.autocommand"
 require "user.treesitter"
 require "user.lsp"
 require "user.cmp"

@@ -40,6 +40,10 @@ require('packer').startup(function(use)
     after = 'nvim-treesitter',
   }
 
+  -- Syntax Plugins
+  -- neomutt
+  use 'neomutt/neomutt.vim'
+
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
