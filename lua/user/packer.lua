@@ -43,19 +43,19 @@ require('packer').startup(function(use)
   -- Syntax Plugins
   -- neomutt
   use 'neomutt/neomutt.vim'
+  use 'mboughaba/i3config.vim'
 
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
-
-  -- LazyGit
   use 'kdheepak/lazygit.nvim'
 
-  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
-  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
-  use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
-  use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+  -- chezmoi
+  use 'alker0/chezmoi.vim'
+
+  -- Dracula Nvim
+  use { 'Mofiqul/dracula.nvim' }
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
@@ -63,25 +63,42 @@ require('packer').startup(function(use)
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
+  -- Fietype NVIM
+  use "nathom/filetype.nvim"
+
+  -- LuaLine
+  use {
+    'nvim-lualine/lualine.nvim', -- Fancier statusline
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true},
+  }
+  use 'arkav/lualine-lsp-progress'
+
+  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+  use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
+  use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+
+  -- Jinja
   use { 'git@gitlab.com:HiPhish/jinja.vim.git' }
+
+  -- Markdown Preview
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  -- Org
+  use {'nvim-treesitter/nvim-treesitter'}
+  use {'nvim-orgmode/orgmode', config = function()
+    require('orgmode').setup{}
+  end
+  }
 
   -- RANGER 
   use { 'francoiscabrol/ranger.vim' }
   use { 'rbgrouleff/bclose.vim' }
 
-  -- Dracula Nvim
-  use { 'Mofiqul/dracula.nvim' }
+  -- TODO txt
+  use 'freitass/todo.txt-vim'
 
   -- VIM WIKI
   use { 'vimwiki/vimwiki' }
-
-  -- Markdown Preview
-  use({
-      "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
-  })
-
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   -- WAKATIME
   use 'wakatime/vim-wakatime'

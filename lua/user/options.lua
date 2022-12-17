@@ -52,4 +52,5 @@ vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins f
 -- Colorscheme 
 vim.cmd [[colorscheme dracula]]
 
+
 -- vim: ts=2 sts=2 sw=2 et
