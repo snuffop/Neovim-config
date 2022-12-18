@@ -62,6 +62,10 @@ require('packer').startup(function(use)
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+  
+  -- telescope project
+  use 'cljoly/telescope-repo.nvim'
+  use 'airblade/vim-rooter'
 
   -- Fietype NVIM
   use "nathom/filetype.nvim"
@@ -77,18 +81,16 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
+  -- Obsidian
+  use 'epwalsh/obsidian.nvim'
+
   -- Jinja
   use { 'git@gitlab.com:HiPhish/jinja.vim.git' }
 
   -- Markdown Preview
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-
-  -- Org
-  use {'nvim-treesitter/nvim-treesitter'}
-  use {'nvim-orgmode/orgmode', config = function()
-    require('orgmode').setup{}
-  end
-  }
+  use 'preservim/vim-markdown'
+  use 'godlygeek/tabular'
 
   -- RANGER 
   use { 'francoiscabrol/ranger.vim' }
