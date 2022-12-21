@@ -26,14 +26,20 @@ require('telescope').setup {
       filetypes = {"png", "webp", "jpg", "jpeg","pdf"},
       find_cmd = "rg" -- find command (defaults to `fd`)
     },
+     fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+    },
   },
 }
 
 require("telescope").load_extension "repo"
-require('telescope').load_extension('media_files')
+require("telescope").load_extension "media_files"
 
 -- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
+require('telescope').load_extension "fzf"
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -59,6 +65,8 @@ vim.keymap.set('n', '<leader>st', require('telescope.builtin').treesitter, { des
 vim.keymap.set('n', '<leader>sv', require('telescope.builtin').vim_options, { desc = '[S]earch [V]im_options' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc = '[S]earch [J]umplism' })
+
+vim.keymap.set('n', '<leader>pf', require('telescope.builtin').git_files, { desc = '[P]roject [F]iles' })
 
 vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[G]it [S]tatus' })
 vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_bcommits, { desc = '[G]it [B]commits' })

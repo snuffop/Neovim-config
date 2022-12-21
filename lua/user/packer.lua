@@ -62,9 +62,6 @@ require('packer').startup(function(use)
   -- chezmoi
   use 'alker0/chezmoi.vim'
 
-  -- Dracula Nvim
-  use { 'Mofiqul/dracula.nvim' }
-
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' } }
 
@@ -90,6 +87,8 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
+  -- Night Fox
+  use "EdenEast/nightfox.nvim" 
   -- Obsidian
   use 'epwalsh/obsidian.nvim'
 
@@ -110,6 +109,9 @@ require('packer').startup(function(use)
   use { 'francoiscabrol/ranger.vim' }
   use { 'rbgrouleff/bclose.vim' }
 
+  -- Surround
+  use 'tpope/vim-surround'
+  
   -- Telekasten
   use 'renerocksai/telekasten.nvim'
 
@@ -154,4 +156,5 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = vim.fn.expand '$MYVIMRC',
 })
 
+vim.keymap.set('n', '<leader>u', ':PackerSync<cr>', {desc = 'Packer Sync'})
 -- vim: ts=2 sts=2 sw=2 et

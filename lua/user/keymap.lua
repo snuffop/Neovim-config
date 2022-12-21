@@ -21,6 +21,19 @@ vim.keymap.set('v', ';', ':', {desc="remap"})
 vim.keymap.set('n', ',p', '"0p')
 vim.keymap.set('n', ',P', '"0P')
 
+-- use del to escape everything
+
+vim.keymap.set('n', '<Del>', '<Esc>')
+vim.keymap.set('v', '<Del>', '<Esc>gV')
+vim.keymap.set('o', '<Del>', '<Esc>')
+vim.keymap.set('c', '<Del>', '<C-C><Esc>')
+vim.keymap.set('i', '<Del>', '<Esc>`^')
+vim.keymap.set('t', '<Del>', '<C-\\><C-n>')
+
+-- Update file if changes made 
+
+vim.keymap.set('n', '<leader>w', ':up<cr>')
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
