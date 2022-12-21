@@ -51,6 +51,14 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'kdheepak/lazygit.nvim'
 
+  -- General 
+
+  -- ansible
+  use 'mfussenegger/nvim-ansible'
+
+  -- calendar
+  use 'renerocksai/calendar-vim'
+
   -- chezmoi
   use 'alker0/chezmoi.vim'
 
@@ -58,11 +66,12 @@ require('packer').startup(function(use)
   use { 'Mofiqul/dracula.nvim' }
 
   -- Fuzzy Finder (files, lsp, etc)
-  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' } }
 
+  use 'nvim-telescope/telescope-media-files.nvim'
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
-  
+
   -- telescope project
   use 'cljoly/telescope-repo.nvim'
   use 'airblade/vim-rooter'
@@ -84,6 +93,11 @@ require('packer').startup(function(use)
   -- Obsidian
   use 'epwalsh/obsidian.nvim'
 
+  -- ORG-Mode
+  use {'nvim-orgmode/orgmode', config = function()
+    require('orgmode').setup{}
+    end
+  }
   -- Jinja
   use { 'git@gitlab.com:HiPhish/jinja.vim.git' }
 
@@ -95,6 +109,9 @@ require('packer').startup(function(use)
   -- RANGER 
   use { 'francoiscabrol/ranger.vim' }
   use { 'rbgrouleff/bclose.vim' }
+
+  -- Telekasten
+  use 'renerocksai/telekasten.nvim'
 
   -- TODO txt
   use 'freitass/todo.txt-vim'

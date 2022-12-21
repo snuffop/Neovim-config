@@ -22,11 +22,15 @@ require('telescope').setup {
          },
        },
     },
+    media_files = {
+      filetypes = {"png", "webp", "jpg", "jpeg","pdf"},
+      find_cmd = "rg" -- find command (defaults to `fd`)
+    },
   },
 }
 
 require("telescope").load_extension "repo"
-
+require('telescope').load_extension('media_files')
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
