@@ -9,10 +9,10 @@ require "user.lsp"
 require "user.lualine"
 require "user.ranger"
 require "user.telescope"
+require "user.org-mode"
 require "user.treesitter"
 require "user.vimwiki"
 require "user.obsidian"
-require "user.org-mode"
 require "user.telekasten"
 
 

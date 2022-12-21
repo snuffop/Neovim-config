@@ -35,11 +35,11 @@ require('telescope').setup {
   },
 }
 
-require("telescope").load_extension "repo"
-require("telescope").load_extension "media_files"
-
--- Enable telescope fzf native, if installed
-require('telescope').load_extension "fzf"
+require("telescope").load_extension("repo")
+require("telescope").load_extension("media_files")
+require('telescope').load_extension("fzf")
+require('telescope').load_extension("zoxide")
+require('telescope').load_extension("gh")
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -56,7 +56,7 @@ vim.keymap.set('n', '<leader>t', ':Telescope<CR>')
 
 vim.keymap.set('n', '<leader>sc', require('telescope.builtin').commands, { desc = '[S]earch [C]commands' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sm', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
@@ -70,3 +70,9 @@ vim.keymap.set('n', '<leader>pf', require('telescope.builtin').git_files, { desc
 
 vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[G]it [S]tatus' })
 vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_bcommits, { desc = '[G]it [B]commits' })
+vim.keymap.set('n', '<leader>gi', require('telescope').extensions.gh.issues)
+vim.keymap.set('n', '<leader>gp', require('telescope').extensions.gh.pull_request)
+vim.keymap.set('n', '<leader>gi', require('telescope').extensions.gh.gist)
+
+-- zoxide
+vim.keymap.set("n", "<leader>cd", require("telescope").extensions.zoxide.list)

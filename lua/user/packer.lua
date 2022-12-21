@@ -62,16 +62,19 @@ require('packer').startup(function(use)
   -- chezmoi
   use 'alker0/chezmoi.vim'
 
-  -- Fuzzy Finder (files, lsp, etc)
-  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' } }
-
-  use 'nvim-telescope/telescope-media-files.nvim'
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
-
-  -- telescope project
-  use 'cljoly/telescope-repo.nvim'
-  use 'airblade/vim-rooter'
+  -- Telescope
+  use {'nvim-telescope/telescope.nvim',
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      {'nvim-lua/popup.nvim'},
+      {'nvim-telescope/telescope-github.nvim'},
+    }}
+  use {'nvim-telescope/telescope-media-files.nvim'}
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use {'cljoly/telescope-repo.nvim'}
+  use {'airblade/vim-rooter'}
+  use {'nvim-telescope/telescope-github.nvim'}
+  use {'jvgrootveld/telescope-zoxide'}
 
   -- Fietype NVIM
   use "nathom/filetype.nvim"
@@ -89,6 +92,7 @@ require('packer').startup(function(use)
 
   -- Night Fox
   use "EdenEast/nightfox.nvim" 
+
   -- Obsidian
   use 'epwalsh/obsidian.nvim'
 
@@ -111,7 +115,7 @@ require('packer').startup(function(use)
 
   -- Surround
   use 'tpope/vim-surround'
-  
+
   -- Telekasten
   use 'renerocksai/telekasten.nvim'
 
@@ -123,6 +127,7 @@ require('packer').startup(function(use)
 
   -- WAKATIME
   use 'wakatime/vim-wakatime'
+
 
   -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
