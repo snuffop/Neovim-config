@@ -48,26 +48,14 @@ require('packer').startup(function(use)
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
-  use 'TimUntersberger/neogit'
-  use {'lewis6991/gitsigns.nvim', config = function()
-    require('gitsigns').setup()
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      }
-    end
+  use {'TimUntersberger/neogit',
+    requires = {
+      'sindrets/diffview.nvim'
+    }
   }
-
+  use {'lewis6991/gitsigns.nvim'}
   use 'kdheepak/lazygit.nvim'
-  use {
-    'pwntester/octo.nvim',
-    config = function ()
-      require"octo".setup()
-    end
-  }
+  use {'pwntester/octo.nvim'}
 
   -- General 
 
