@@ -1,6 +1,5 @@
 require "user.packer"
 require "user.dracula"
-require "user.neotree"
 require "user.options"
 require "user.keymap"
 require "user.autocommand"
@@ -16,5 +15,4 @@ require "user.vimwiki"
 require "user.obsidian"
 require "user.telekasten"
 
-
--- vim: ts=2 sts=2 sw=2 et
+-- vim: ts=2 sts=2 sw=2 et 

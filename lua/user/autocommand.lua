@@ -2,18 +2,18 @@
 --autocmd! BufRead,BufNewFile *.j2  call jinja#AdjustFiletype()
 
 -- Create view for all files
-vim.api.nvim_create_autocmd(
-  { "BufWinLeave" },
-  { pattern= {"*.*"},
-    command = "mkview" }
-)
-
--- Load View for all files
-vim.api.nvim_create_autocmd(
-  { "BufWinEnter" },
-  { pattern= {"*.*"},
-    command = "loadview" }
-)
+-- vim.api.nvim_create_autocmd(
+--   { "BufWinLeave" },
+--   { pattern= {"*.*"},
+--     command = "mkview" }
+-- )
+--
+-- -- Load View for all files
+-- vim.api.nvim_create_autocmd(
+--   { "BufWinEnter" },
+--   { pattern= {"*.*"},
+--     command = "loadview" }
+-- )
 
 -- Enable Spell checker
 vim.api.nvim_create_autocmd(

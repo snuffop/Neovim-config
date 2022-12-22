@@ -86,6 +86,13 @@ vim.keymap.set('n', '<leader>gi', require('telescope').extensions.gh.issues, {de
 vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = 'Status' })
 vim.keymap.set('n', '<leader>gt', require('telescope').extensions.gh.gist, {desc = "Github gist"})
 
+
+-- 
+-- O Open
+-- 
+
+vim.keymap.set('n', '<leader>omn', require('user.MyTele').edit_neovim, {desc = "Open My Nvim"})
+
 --
 -- P Project
 --
@@ -111,7 +118,16 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 
 vim.keymap.set('n', '<leader>t', ':Telescope<CR>', {desc = 'Telescope Commands'})
 
+
+--
+-- Z 
+--
+
+
 -- help
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Help' })
+
+
+
 
 -- vim: ts=2 sts=2 sw=2 et

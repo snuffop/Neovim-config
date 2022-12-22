@@ -1,10 +1,12 @@
 local home = vim.fn.expand("~/Nextcloud/Zettelkasten")
+
 -- NOTE for Windows users:
 -- - don't use Windows
 -- - try WSL2 on Windows and pretend you're on Linux
 -- - if you **must** use Windows, use "/Users/myname/zettelkasten" instead of "~/zettelkasten"
 -- - NEVER use "C:\Users\myname" style paths
 -- - Using `vim.fn.expand("~/zettelkasten")` should work now but mileage will vary with anything outside of finding and opening files
+--
 require('telekasten').setup({
     home         = home,
 
@@ -83,15 +85,14 @@ require('telekasten').setup({
     insert_after_inserting = true,
 
     -- tag notation: '#tag', ':tag:', 'yaml-bare'
-    tag_notation = "#tag",
+    tag_notation = ":tag:",
 
     -- command palette theme: dropdown (window) or ivy (bottom panel)
-    --command_palette_theme = "ivy",
     command_palette_theme = "dropdown",
 
     -- tag list theme:
     -- get_cursor: small tag list at cursor; ivy and dropdown like above
-    show_tags_theme = "ivy",
+    show_tags_theme = "dropdown",
 
     -- when linking to a note in subdir/, create a [[subdir/title]] link
     -- instead of a [[title only]] link
@@ -148,12 +149,3 @@ require('telekasten').setup({
     -- A customizable fallback handler for urls.
     follow_url_fallback = nil,
 })
-
-vim.keymap.set('n', '<leader>zz', require('telekasten').find_notes, {desc = '[Z]etlekasten [Z] find'})
-vim.keymap.set('n', '<leader>zd', require('telekasten').find_daily_notes, {desc = '[Z]etlekasten [D]aily Search'})
-vim.keymap.set('n', '<leader>zs', require('telekasten').search_notes, {desc = '[Z]ettlekasten [S]earch'})
-vim.keymap.set('n', '<leader>zf', require('telekasten').follow_link, {desc = '[Z]ettlekasten [F]ollow Link'})
-
-vim.keymap.set('n', '<leader>z', require('telekasten').panel, {desc = '[Z]ettlekasten Panel'})
-
-

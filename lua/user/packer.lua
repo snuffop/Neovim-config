@@ -65,9 +65,6 @@ require('packer').startup(function(use)
   -- calendar
   use 'renerocksai/calendar-vim'
 
-  -- chezmoi
-  use 'alker0/chezmoi.vim'
-
   -- Dracula
   use 'Mofiqul/dracula.nvim'
 
@@ -81,6 +78,7 @@ require('packer').startup(function(use)
   use {'nvim-telescope/telescope-media-files.nvim'}
   use {'nvim-telescope/telescope-project.nvim'}
   use {'nvim-telescope/telescope-packer.nvim'}
+  use {'nvim-telescope/telescope-symbols.nvim'}
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'cljoly/telescope-repo.nvim'}
   use {'airblade/vim-rooter'}
@@ -109,42 +107,9 @@ require('packer').startup(function(use)
     require('Comment').setup()
     end
   }
+ 
   -- tpoop slueth
-  --
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
-
-  -- neotree
-  use {
-  "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    requires = { 
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      {
-        -- only needed if you want to use the commands with "_with_window_picker" suffix
-        's1n7ax/nvim-window-picker',
-        tag = "v1.*",
-        config = function()
-          require'window-picker'.setup({
-            autoselect_one = true,
-            include_current = false,
-            filter_rules = {
-              -- filter using buffer options
-              bo = {
-                -- if the file type is one of following, the window will be ignored
-                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
-
-                -- if the buffer type is one of following, the window will be ignored
-                buftype = { 'terminal', "quickfix" },
-              },
-            },
-            other_win_hl_color = '#e35e4f',
-          })
-        end,
-      }
-    }
-  }
 
   -- Obsidian
   use 'epwalsh/obsidian.nvim'
@@ -170,9 +135,6 @@ require('packer').startup(function(use)
   -- Surround
   use 'tpope/vim-surround'
 
-  -- Telekasten
-  use 'renerocksai/telekasten.nvim'
-
   -- TODO txt
   use 'freitass/todo.txt-vim'
 
@@ -189,6 +151,9 @@ require('packer').startup(function(use)
        require("user.whichkey").setup()
      end,
   }
+
+  -- TeleKasten
+  use 'renerocksai/telekasten.nvim'
 
   -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
