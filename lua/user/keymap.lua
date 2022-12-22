@@ -21,7 +21,7 @@ vim.keymap.set('v', ';', ':', {desc="remap"})
 vim.keymap.set('n', ',p', '"0p')
 vim.keymap.set('n', ',P', '"0P')
 
--- use del to escape everything
+-- use <Del> to escape everything
 
 vim.keymap.set('n', '<Del>', '<Esc>')
 vim.keymap.set('v', '<Del>', '<Esc>gV')
@@ -37,9 +37,13 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+------------
 -- LEADER --
+------------
 
+--  
 --  Symbol special character
+--
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
@@ -49,34 +53,49 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer]' })
 
-vim.keymap.set('n', '<leader><space>', ':Telescope<CR>', {desc = 'Telescope Commands'})
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').commands, { desc = 'Commands' })
 
+-- 
 -- B buffers
+--
 
 vim.keymap.set('n', '<leader>bb', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
 
+--
 -- F Files
+--
 
 vim.keymap.set('n', '<leader>fs', ':up<cr>', {desc = 'File Save'})
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Find Files' })
 vim.keymap.set("n", "<leader>fz", require("telescope").extensions.zoxide.list, { desc = 'zoxide' })
 
+vim.keymap.set('n', '<leader>frr', ':Ranger<CR>')
+vim.keymap.set('n', '<leader>frf', ':RangerCurrentFile<CR>')
+vim.keymap.set('n', '<leader>frd', ':RangerCurrentDirectory<CR>')
+vim.keymap.set('n', '<leader>frt', ':RangerCurrentFileNewTab<CR>')
+
+--
 -- G Git
+--
 
-vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_bcommits, { desc = '[G]it [B]commits' })
-vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
-vim.keymap.set('n', '<leader>gi', require('telescope').extensions.gh.gist)
-vim.keymap.set('n', '<leader>gi', require('telescope').extensions.gh.issues)
-vim.keymap.set('n', '<leader>gp', require('telescope').extensions.gh.pull_request)
-vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[G]it [S]tatus' })
+vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_bcommits, { desc = 'B_commits' })
+vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Files' })
+vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = "Lazy Git" })
+vim.keymap.set('n', '<leader>gi', require('telescope').extensions.gh.issues, {desc = "Github Issues"})
+--vim.keymap.set('n', '<leader>gp', require('telescope').extensions.gh.pull_requests, {desc = "Github Pull Request"})
+vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = 'Status' })
+vim.keymap.set('n', '<leader>gt', require('telescope').extensions.gh.gist, {desc = "Github gist"})
 
+--
 -- P Project
+--
 
-vim.keymap.set('n', '<leader>pf', require('telescope.builtin').git_files, { desc = '[P]roject [F]iles' })
 
+
+--
 -- S Search
+--
 
-vim.keymap.set('n', '<leader>sc', require('telescope.builtin').commands, { desc = 'Commands' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = 'Diagnostics' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Grep' })
 vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc = 'Jumplist' })
@@ -85,6 +104,12 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').registers, { desc
 vim.keymap.set('n', '<leader>st', require('telescope.builtin').treesitter, { desc = 'Treesitter' })
 vim.keymap.set('n', '<leader>sv', require('telescope.builtin').vim_options, { desc = 'Vim_options' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = 'Word' })
+
+-- 
+-- T 
+-- 
+
+vim.keymap.set('n', '<leader>t', ':Telescope<CR>', {desc = 'Telescope Commands'})
 
 -- help
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Help' })

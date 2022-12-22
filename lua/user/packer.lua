@@ -48,16 +48,16 @@ require('packer').startup(function(use)
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
+  use 'TimUntersberger/neogit'
   use {'lewis6991/gitsigns.nvim', config = function()
-    require('gitsigns').setup {
+    require('gitsigns').setup()
       signs = {
         add = { text = '+' },
         change = { text = '~' },
         delete = { text = '_' },
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
-      },
-    }
+      }
     end
   }
 
@@ -84,12 +84,11 @@ require('packer').startup(function(use)
   use {'nvim-telescope/telescope.nvim',
     requires = {
       {'nvim-lua/plenary.nvim'},
-      {'nvim-lua/popup.nvim'},
-      {'nvim-telescope/telescope-github.nvim'},
+      {'nvim-lua/popup.nvim'}
     }}
+  use {'nvim-telescope/telescope-github.nvim'}
   use {'nvim-telescope/telescope-media-files.nvim'}
   use {'nvim-telescope/telescope-project.nvim'}
-  use {'nvim-telescope/telescope-github.nvim'}
   use {'nvim-telescope/telescope-packer.nvim'}
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'cljoly/telescope-repo.nvim'}
@@ -130,7 +129,7 @@ require('packer').startup(function(use)
     require('orgmode').setup{}
     end
   }
-  -- Jinja
+  -- Jinja z
   use { 'git@gitlab.com:HiPhish/jinja.vim.git' }
 
   -- Markdown Preview
@@ -162,7 +161,7 @@ require('packer').startup(function(use)
   use {
      "folke/which-key.nvim",
      config = function()
-       require("userwhichkey").setup()
+       require("user.whichkey").setup()
      end,
   }
 
@@ -198,5 +197,4 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = vim.fn.expand '$MYVIMRC',
 })
 
-vim.keymap.set('n', '<leader>u', ':PackerSync<cr>', {desc = 'Packer Sync'})
 -- vim: ts=2 sts=2 sw=2 et

@@ -4,6 +4,11 @@ function M.setup()
   local whichkey = require "which-key"
 
   local conf = {
+    plugins = {
+      spelling = {
+        enabled = true
+      },
+    },
     window = {
       border = "single", -- none, single, double, shadow
       position = "bottom", -- bottom, top
