@@ -1,4 +1,4 @@
-local home = vim.fn.expand("~/Nextcloud/Notes/telekasten")
+local home = vim.fn.expand("~/Nextcloud/Zettelkasten")
 -- NOTE for Windows users:
 -- - don't use Windows
 -- - try WSL2 on Windows and pretend you're on Linux

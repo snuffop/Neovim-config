@@ -30,30 +30,6 @@ vim.keymap.set('c', '<Del>', '<C-C><Esc>')
 vim.keymap.set('i', '<Del>', '<Esc>`^')
 vim.keymap.set('t', '<Del>', '<C-\\><C-n>')
 
--- Update file if changes made 
-
-vim.keymap.set('n', '<leader>w', ':up<cr>')
-
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
-})
-
--- Enable Comment.nvim
-require('Comment').setup()
-
--- Enable `lukas-reineke/indent-blankline.nvim`
--- See `:help indent_blankline.txt`
-require('indent_blankline').setup {
-  char = '┊',
-  show_trailing_blankline_indent = false,
-}
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -61,7 +37,56 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
--- Lazy Git Binding
+-- LEADER --
+
+--  Symbol special character
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer]' })
+
+vim.keymap.set('n', '<leader><space>', ':Telescope<CR>', {desc = 'Telescope Commands'})
+
+-- B buffers
+
+vim.keymap.set('n', '<leader>bb', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
+
+-- F Files
+
+vim.keymap.set('n', '<leader>fs', ':up<cr>', {desc = 'File Save'})
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Find Files' })
+vim.keymap.set("n", "<leader>fz", require("telescope").extensions.zoxide.list, { desc = 'zoxide' })
+
+-- G Git
+
+vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_bcommits, { desc = '[G]it [B]commits' })
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
+vim.keymap.set('n', '<leader>gi', require('telescope').extensions.gh.gist)
+vim.keymap.set('n', '<leader>gi', require('telescope').extensions.gh.issues)
+vim.keymap.set('n', '<leader>gp', require('telescope').extensions.gh.pull_request)
+vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[G]it [S]tatus' })
+
+-- P Project
+
+vim.keymap.set('n', '<leader>pf', require('telescope.builtin').git_files, { desc = '[P]roject [F]iles' })
+
+-- S Search
+
+vim.keymap.set('n', '<leader>sc', require('telescope.builtin').commands, { desc = 'Commands' })
+vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = 'Diagnostics' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Grep' })
+vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc = 'Jumplist' })
+vim.keymap.set('n', '<leader>sm', require('telescope.builtin').keymaps, { desc = 'Keymaps' })
+vim.keymap.set('n', '<leader>sr', require('telescope.builtin').registers, { desc = 'Registers' })
+vim.keymap.set('n', '<leader>st', require('telescope.builtin').treesitter, { desc = 'Treesitter' })
+vim.keymap.set('n', '<leader>sv', require('telescope.builtin').vim_options, { desc = 'Vim_options' })
+vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = 'Word' })
+
+-- help
+vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Help' })
 
 -- vim: ts=2 sts=2 sw=2 et

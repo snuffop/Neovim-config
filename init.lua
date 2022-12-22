@@ -15,5 +15,4 @@ require "user.vimwiki"
 require "user.obsidian"
 require "user.telekasten"
 
-
 -- vim: ts=2 sts=2 sw=2 et
