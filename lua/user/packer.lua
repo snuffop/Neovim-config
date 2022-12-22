@@ -77,10 +77,11 @@ require('packer').startup(function(use)
     }}
   use {'nvim-telescope/telescope-media-files.nvim'}
   use {'nvim-telescope/telescope-project.nvim'}
+  use {'nvim-telescope/telescope-github.nvim'}
+  use {'nvim-telescope/telescope-packer.nvim'}
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'cljoly/telescope-repo.nvim'}
   use {'airblade/vim-rooter'}
-  use {'nvim-telescope/telescope-github.nvim'}
   use {'jvgrootveld/telescope-zoxide'}
 
   -- Fietype NVIM

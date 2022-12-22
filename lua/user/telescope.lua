@@ -50,6 +50,7 @@ require('telescope').load_extension("fzf")
 require('telescope').load_extension("zoxide")
 require('telescope').load_extension("gh")
 require('telescope').load_extension('project')
+require('telescope').load_extension('packer')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
