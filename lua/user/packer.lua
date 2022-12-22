@@ -50,6 +50,12 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
   use 'kdheepak/lazygit.nvim'
+  use {
+    'pwntester/octo.nvim',
+    config = function ()
+      require"octo".setup()
+    end
+  }
 
   -- General 
 
@@ -70,6 +76,7 @@ require('packer').startup(function(use)
       {'nvim-telescope/telescope-github.nvim'},
     }}
   use {'nvim-telescope/telescope-media-files.nvim'}
+  use {'nvim-telescope/telescope-project.nvim'}
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'cljoly/telescope-repo.nvim'}
   use {'airblade/vim-rooter'}

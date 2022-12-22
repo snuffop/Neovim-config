@@ -37,8 +37,23 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'treesitter'},
+    { name = 'vsnip'},
+    { name = 'path' },
     { name = 'luasnip' },
+    { name = 'buffer',
+      opts = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end,
+      },
+    },
+    { name = 'spell' },
+  },
+  experimental = {
+    ghost_text = false,
   },
 }
+
 
 -- vim: ts=2 sts=2 sw=2 et

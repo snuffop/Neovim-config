@@ -22,6 +22,15 @@ require('telescope').setup {
          },
        },
     },
+    projects = {
+      base_dirs = {
+        {path = '~/Source'},
+        {path = '~/.config'},
+      hidden_file = true,
+      theme = "dropdown",
+      order_by = "asc",
+      }
+    },
     media_files = {
       filetypes = {"png", "webp", "jpg", "jpeg","pdf"},
       find_cmd = "rg" -- find command (defaults to `fd`)
@@ -40,6 +49,7 @@ require("telescope").load_extension("media_files")
 require('telescope').load_extension("fzf")
 require('telescope').load_extension("zoxide")
 require('telescope').load_extension("gh")
+require('telescope').load_extension('project')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
