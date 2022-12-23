@@ -25,13 +25,47 @@ function M.setup()
   }
 
   local mappings = {
-    ["w"] = { "<cmd>update!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
 
     b = {
       name = "Buffer",
+      b = { "<cmd>Telescope Buffers<cr>", "Find Existing Buffers" },
       c = { "<Cmd>bd!<Cr>", "Close current buffer" },
       D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
+    },
+
+    f = {
+      name = "+File",
+      f = { "<cmd>Telescope find_files<cr>", "Find File" },
+      s = { "<cmd>up<cr>", "File Save" },
+      z = { "<cmd>Telescope zoxide list<cr>", "Zoxide" },
+      r = {
+        name = "+Ranger",
+        r  = { "<cmd>Ranger<cr>", "Ranger" },
+        f  = { "<cmd>RangerCurrentFile<CR>", "Current File" },
+        d  = { "<cmd>RangerCurrentDirectory<CR>", "Current Directory" },
+        t  = { "<cmd>RangerCurrentFileNewTab<CR>", "Current File New Tab" },
+      }
+    },
+
+    g = {
+      name = "Git",
+      c = { "<cmd>Telescope git_bcommits<cr>", "B_Commits" },
+      f = { "<cmd>Telescope git_files<cr>", "Files" },
+      g = { "<cmd>LazyGit<cr>", "Lazy Git" },
+      i = { "<cmd>Telescope gh.issues<cr>", "Github Issues"},
+      p = { "<cmd>Telescope gh.pull_requests<cr>", "Github Pull Request"},
+      s = { "<cmd>Neogit<cr>", "Status" },
+      S = { "<cmd>Telescope git_status<cr>", "Status" },
+      t = { "<cmd>Telescope gh.gist<cr>", "Github gist"},
+    },
+
+    n = {
+      name = "Notes",
+    },
+    
+    o = {
+      name = "Open",
     },
 
     z = {
@@ -43,10 +77,6 @@ function M.setup()
       u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
-    g = {
-      name = "Git",
-      s = { "<cmd>Neogit<CR>", "Status" },
-    },
   }
 
   whichkey.setup(conf)

@@ -55,72 +55,21 @@ end, { desc = '[/] Fuzzily search in current buffer]' })
 
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').commands, { desc = 'Commands' })
 
--- 
--- B buffers
---
 
-vim.keymap.set('n', '<leader>bb', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
+
 
 --
--- F Files
+-- H help
 --
 
-vim.keymap.set('n', '<leader>fs', ':up<cr>', {desc = 'File Save'})
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Find Files' })
-vim.keymap.set("n", "<leader>fz", require("telescope").extensions.zoxide.list, { desc = 'zoxide' })
-
-vim.keymap.set('n', '<leader>frr', ':Ranger<CR>')
-vim.keymap.set('n', '<leader>frf', ':RangerCurrentFile<CR>')
-vim.keymap.set('n', '<leader>frd', ':RangerCurrentDirectory<CR>')
-vim.keymap.set('n', '<leader>frt', ':RangerCurrentFileNewTab<CR>')
-
---
--- G Git
---
-
-vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_bcommits, { desc = 'B_commits' })
-vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Files' })
-vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = "Lazy Git" })
-vim.keymap.set('n', '<leader>gi', require('telescope').extensions.gh.issues, {desc = "Github Issues"})
---vim.keymap.set('n', '<leader>gp', require('telescope').extensions.gh.pull_requests, {desc = "Github Pull Request"})
-vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = 'Status' })
-vim.keymap.set('n', '<leader>gt', require('telescope').extensions.gh.gist, {desc = "Github gist"})
-
+vim.keymap.set('n', '<leader>hh', require('telescope.builtin').help_tags, { desc = 'Help' })
+vim.keymap.set('n', '<leader>hk', require('telescope.builtin').keymaps, { desc = 'Telescope Keymaps' })
+vim.keymap.set('n', '<leader>ho', require('telescope.builtin').vim_options, { desc = 'Telescope Vim_options' })
+vim.keymap.set('n', '<leader>hr', require('telescope.builtin').registers, { desc = 'Telescope Registers' })
 
 -- 
--- O Open
+-- N Notes
 -- 
-
-vim.keymap.set('n', '<leader>omn', require('user.MyTele').edit_neovim, {desc = "Open My Nvim"})
-
---
--- P Project
---
-
-
-
---
--- S Search
---
-
-vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = 'Diagnostics' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Grep' })
-vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc = 'Jumplist' })
-vim.keymap.set('n', '<leader>sm', require('telescope.builtin').keymaps, { desc = 'Keymaps' })
-vim.keymap.set('n', '<leader>sr', require('telescope.builtin').registers, { desc = 'Registers' })
-vim.keymap.set('n', '<leader>st', require('telescope.builtin').treesitter, { desc = 'Treesitter' })
-vim.keymap.set('n', '<leader>sv', require('telescope.builtin').vim_options, { desc = 'Vim_options' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = 'Word' })
-
--- 
--- T 
--- 
-
-vim.keymap.set('n', '<leader>t', ':Telescope<CR>', {desc = 'Telescope Commands'})
-
---
--- Z 
---
 
 vim.keymap.set('n', "<leader>ntC", ":CalendarT", { desc = 'Calendar' })
 vim.keymap.set('n', "<leader>ntf", require('telekasten').find_notes, { desc = 'TelFind Notes' })
@@ -145,8 +94,39 @@ vim.keymap.set('n', "<leader>ntr", require('telekasten').rename_note, { desc = '
 vim.keymap.set('n', '<leader>ntz', require('telekasten').panel, { desc = 'Telekasten' })
 -- vim.keymap.set('n', "<leader>zI", require('telekasten').insert_img_link,{ i=true })
 
--- help
-vim.keymap.set('n', '<leader>h', require('telescope.builtin').help_tags, { desc = 'Help' })
+-- 
+-- O Open
+-- 
+
+vim.keymap.set('n', '<leader>omn', require('user.MyTele').edit_neovim, {desc = "Open My Nvim"})
+
+--
+-- P Project
+--
+
+
+
+--
+-- S Search
+--
+
+vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = 'Diagnostics' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Grep' })
+vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc = 'Jumplist' })
+vim.keymap.set('n', '<leader>st', require('telescope.builtin').treesitter, { desc = 'Treesitter' })
+vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = 'Word' })
+
+-- 
+-- T 
+-- 
+
+vim.keymap.set('n', '<leader>tt', ':Telescope<CR>', {desc = 'Telescope'})
+
+
+--
+-- Z 
+--
+
 
 
 -- vim: ts=2 sts=2 sw=2 et

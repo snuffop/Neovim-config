@@ -48,6 +48,9 @@ require('packer').startup(function(use)
   -- ansible
   use 'mfussenegger/nvim-ansible'
 
+  -- barbar  Tab Bar
+  use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
+
   -- calendar
   use 'renerocksai/calendar-vim'
 
