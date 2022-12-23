@@ -37,7 +37,7 @@ local options = {
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
   wrap = true,                             -- display lines as one long line
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-  foldmethod = 'manual',
+  foldenable = false,
 }
 
 for k, v in pairs(options) do

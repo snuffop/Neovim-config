@@ -1,20 +1,6 @@
 -- Auto commands
 --autocmd! BufRead,BufNewFile *.j2  call jinja#AdjustFiletype()
 
--- Create view for all files
--- vim.api.nvim_create_autocmd(
---   { "BufWinLeave" },
---   { pattern= {"*.*"},
---     command = "mkview" }
--- )
---
--- -- Load View for all files
--- vim.api.nvim_create_autocmd(
---   { "BufWinEnter" },
---   { pattern= {"*.*"},
---     command = "loadview" }
--- )
-
 -- Enable Spell checker
 vim.api.nvim_create_autocmd(
     { "BufRead", "BufNewFile" },
@@ -36,5 +22,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
   group = highlight_group,
   pattern = '*',
+})
+
+-- Automatically source and re-compile packer whenever you save this init.lua
+local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+  command = 'source <afile> | PackerCompile',
+  group = packer_group,
+  pattern = 'packer.lua'
 })
 
