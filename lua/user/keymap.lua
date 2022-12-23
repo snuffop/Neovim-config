@@ -118,16 +118,35 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 
 vim.keymap.set('n', '<leader>t', ':Telescope<CR>', {desc = 'Telescope Commands'})
 
-
 --
 -- Z 
 --
 
+vim.keymap.set('n', "<leader>ntC", ":CalendarT", { desc = 'Calendar' })
+vim.keymap.set('n', "<leader>ntf", require('telekasten').find_notes, { desc = 'TelFind Notes' })
+vim.keymap.set('n', "<leader>ntd", require('telekasten').find_daily_notes, { desc = 'Tel Find Daily Notes' })
+vim.keymap.set('n', "<leader>ntg", require('telekasten').search_notes, { desc = 'Tel Search Notes' })
+vim.keymap.set('n', "<leader>ntz", require('telekasten').follow_link, { desc = 'Tel Follow Link' })
+vim.keymap.set('n', "<leader>ntT", require('telekasten').goto_today, { desc = 'Tel Go to Today' })
+vim.keymap.set('n', "<leader>ntW", require('telekasten').goto_thisweek, { desc = 'Tel Go to This week' })
+vim.keymap.set('n', "<leader>ntw", require('telekasten').find_weekly_notes, { desc = 'Tel Find Weekly' })
+vim.keymap.set('n', "<leader>ntn", require('telekasten').new_note, { desc = 'Tel New Note' })
+vim.keymap.set('n', "<leader>ntN", require('telekasten').new_templated_note, { desc = 'Tel Template Note' })
+vim.keymap.set('n', "<leader>nty", require('telekasten').yank_notelink, { desc = 'Tel Yank Note Link' })
+vim.keymap.set('n', "<leader>ntc", require('telekasten').show_calendar, { desc = 'Tel Show Calendar' })
+vim.keymap.set('n', "<leader>nti", require('telekasten').paste_img_and_link, { desc = 'Tel Paste Image' })
+vim.keymap.set('n', "<leader>ntt", require('telekasten').toggle_todo, { desc = 'Tel Toggle Todo' })
+vim.keymap.set('n', "<leader>ntb", require('telekasten').show_backlinks, { desc = 'Tel Show Backlinks' })
+vim.keymap.set('n', "<leader>ntF", require('telekasten').find_friends, { desc = 'Tel Find Friends' })
+vim.keymap.set('n', "<leader>ntp", require('telekasten').preview_img, { desc = 'Tel Preview Image' })
+vim.keymap.set('n', "<leader>ntm", require('telekasten').browse_media, { desc = 'Tel Browse Media' })
+vim.keymap.set('n', "<leader>nta", require('telekasten').show_tags, { desc = 'Tel Show Tags' })
+vim.keymap.set('n', "<leader>ntr", require('telekasten').rename_note, { desc = 'Tel Rename Note' })
+vim.keymap.set('n', '<leader>ntz', require('telekasten').panel, { desc = 'Telekasten' })
+-- vim.keymap.set('n', "<leader>zI", require('telekasten').insert_img_link,{ i=true })
 
 -- help
-vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Help' })
-
-
+vim.keymap.set('n', '<leader>h', require('telescope.builtin').help_tags, { desc = 'Help' })
 
 
 -- vim: ts=2 sts=2 sw=2 et
