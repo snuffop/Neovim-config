@@ -28,7 +28,7 @@ function M.setup()
     ["q"] = { "<cmd>q!<CR>", "Quit" },
 
     b = {
-      name = "Buffer",
+      name = "+Buffer",
       b = { "<cmd>Telescope Buffers<cr>", "Find Existing Buffers" },
       c = { "<Cmd>bd!<Cr>", "Close current buffer" },
       D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
@@ -49,7 +49,7 @@ function M.setup()
     },
 
     g = {
-      name = "Git",
+      name = "+Git",
       c = { "<cmd>Telescope git_bcommits<cr>", "B_Commits" },
       f = { "<cmd>Telescope git_files<cr>", "Files" },
       g = { "<cmd>LazyGit<cr>", "Lazy Git" },
@@ -60,16 +60,47 @@ function M.setup()
       t = { "<cmd>Telescope gh.gist<cr>", "Github gist"},
     },
 
-    n = {
-      name = "Notes",
+    h = {
+      name = "+Help",
+      h = { "<cmd>Telescope help_tags<cr>", 'Tags' },
+      k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+      o = { "<cmd>Telescope vim_options<cr>", "Vim_options" },
+      r = { "<cmd>Telescope registers<cr>", "Registers" },
     },
-    
+    n = {
+      name = "+Notes",
+      t = {
+        name = "+Telekasten",
+        f  = { ":lua require('telekasten').find_notes()<CR>", "Find Note"},
+        d  = { ":lua require('telekasten').find_daily_notes()<CR>", "Find Daily Note" },
+        g  = { ":lua require('telekasten').search_notes()<CR>", "Search Notes" },
+        z  = { ":lua require('telekasten').follow_link()<CR>", "Follow Link" },
+        T  = { ":lua require('telekasten').goto_today()<CR>", "Goto Today" },
+        W  = { ":lua require('telekasten').goto_thisweek()<CR>", "Goto This Week" },
+        w  = { ":lua require('telekasten').find_weekly_notes()<CR>", "Find Weekly Note" },
+        n  = { ":lua require('telekasten').new_note()<CR>", "New Note" },
+        N  = { ":lua require('telekasten').new_templated_note()<CR>", "New Note w/Template" },
+        y  = { ":lua require('telekasten').yank_notelink()<CR>", "Yank Note Link" },
+        c  = { ":lua require('telekasten').show_calendar()<CR>", "Show Calendar" },
+        C  = { ":CalendarT<CR>", "Calendar T" },
+        i  = { ":lua require('telekasten').paste_img_and_link()<CR>", "Past Image & Link" },
+        t  = { ":lua require('telekasten').toggle_todo()<CR>", "Toggle Todo" },
+        b  = { ":lua require('telekasten').show_backlinks()<CR>", "Show Backlinks" },
+        F  = { ":lua require('telekasten').find_friends()<CR>", "Find Friends" },
+        I  = { ":lua require('telekasten').insert_img_link({ i=true })<CR>", "Insert Img Link" },
+        p  = { ":lua require('telekasten').preview_img()<CR>", "Preview image" },
+        m  = { ":lua require('telekasten').browse_media()<CR>", "Browse media" },
+        a  = { ":lua require('telekasten').show_tags()<CR>", "Show Tags" },
+        r  = { ":lua require('telekasten').rename_note()<CR>", "Raname Note" },
+      },
+    },
+
     o = {
-      name = "Open",
+      name = "+Open",
     },
 
     z = {
-      name = "Packer",
+      name = "+Packer",
       c = { "<cmd>PackerCompile<cr>", "Compile" },
       i = { "<cmd>PackerInstall<cr>", "Install" },
       s = { "<cmd>PackerSync<cr>", "Sync" },

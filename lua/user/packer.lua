@@ -125,7 +125,8 @@ require('packer').startup(function(use)
   }
 
   -- Jinja z
-  use { 'git@gitlab.com:HiPhish/jinja.vim.git' }
+  -- use { 'git@gitlab.com:HiPhish/jinja.vim.git' }
+  use { 'Glench/Vim-Jinja2-Syntax' }
 
   -- Markdown Preview
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })

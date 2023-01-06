@@ -58,15 +58,6 @@ vim.keymap.set('n', '<leader><space>', require('telescope.builtin').commands, { 
 
 
 
---
--- H help
---
-
-vim.keymap.set('n', '<leader>hh', require('telescope.builtin').help_tags, { desc = 'Help' })
-vim.keymap.set('n', '<leader>hk', require('telescope.builtin').keymaps, { desc = 'Telescope Keymaps' })
-vim.keymap.set('n', '<leader>ho', require('telescope.builtin').vim_options, { desc = 'Telescope Vim_options' })
-vim.keymap.set('n', '<leader>hr', require('telescope.builtin').registers, { desc = 'Telescope Registers' })
-
 -- 
 -- N Notes
 -- 
