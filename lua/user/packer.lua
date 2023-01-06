@@ -1,4 +1,4 @@
--- Install packer
+-- Intstall packer
 
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
@@ -18,7 +18,7 @@ require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     requires = {
       -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
+      'wtilliamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
@@ -112,15 +112,21 @@ require('packer').startup(function(use)
     end
   }
 
+  -- Numbers
+  use 'jeffkreeftmeijer/vim-numbertoggle' 
+
   -- neomutt
   use 'neomutt/neomutt.vim'
 
-  -- Obsidian
-  use 'epwalsh/obsidian.nvim'
-
-  -- ORG-Mode
-  use {'nvim-orgmode/orgmode', config = function()
-    require('orgmode').setup{}
+  -- PROJECT 
+  use {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
     end
   }
 
@@ -133,6 +139,20 @@ require('packer').startup(function(use)
   use 'preservim/vim-markdown'
   use 'godlygeek/tabular'
   use {"ellisonleao/glow.nvim"}
+
+  -- Obsidian
+
+  use {
+    'epwalsh/obsidian.nvim',
+    config = function ()
+      require("obsidian").setup({
+        dir = "~/Nextcloud/Obsidian/",
+        completion = {
+          nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+        }
+      })
+    end
+    }
 
   -- RANGER 
   use { 'francoiscabrol/ranger.vim' }
@@ -147,9 +167,6 @@ require('packer').startup(function(use)
   -- TODO txt
   use 'freitass/todo.txt-vim'
 
-  -- VIM WIKI
-  use { 'vimwiki/vimwiki' }
-
   -- WAKATIME
   use 'wakatime/vim-wakatime'
 
@@ -160,9 +177,6 @@ require('packer').startup(function(use)
        require("user.whichkey").setup()
      end,
   }
-
-  -- TeleKasten
-  use 'renerocksai/telekasten.nvim'
 
   -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')

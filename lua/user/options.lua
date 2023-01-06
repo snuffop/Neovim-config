@@ -17,6 +17,7 @@ local options = {
   mouse = 'a',                             -- Enable mouse mode
   numberwidth = 4,                         -- set number column width to 2 {default 4}
   pumheight = 10,                          -- pop up menu height
+  number = true,                           -- allow for number and relative number to get hybred
   relativenumber = true,                   -- Make line numbers default
   scrolloff = 8,                           -- minimal number of screen lines to keep above and below the cursor
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation
@@ -49,7 +50,5 @@ vim.opt.shortmess:append "c"                           -- don't give |ins-comple
 vim.opt.iskeyword:append "-"                           -- hyphenated words recognized by searches
 vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
-
-
 
 -- vim: ts=2 sts=2 sw=2 et
