@@ -18,7 +18,7 @@ require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     requires = {
       -- Automatically install LSPs to stdpath for neovim
-      'wtilliamboman/mason.nvim',
+      'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
@@ -130,8 +130,9 @@ require('packer').startup(function(use)
     end
   }
 
+  use { 'christoomey/vim-tmux-navigator' } 
+
   -- Jinja z
-  -- use { 'git@gitlab.com:HiPhish/jinja.vim.git' }
   use { 'Glench/Vim-Jinja2-Syntax' }
 
   -- Markdown Preview
