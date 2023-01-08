@@ -8,7 +8,7 @@ local keymap = vim.api.nvim_set_keymap
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 -- Modes
 --   normal_mode = "n",
@@ -17,6 +17,33 @@ vim.g.maplocalleader = " "
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
+
+-- Keymaps for better default experience
+-- See `:help vim.keymap.set()`
+keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- Remap for dealing with word wrap
+keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- remap ;
+keymap.set('n', ';', ':', {desc="remap"})
+keymap.set('v', ';', ':', {desc="remap"})
+
+-- Paste last thing yanked, not deleted
+keymap.set('n', ',p', '"0p')
+keymap.set('n', ',P', '"0P')
+
+keymap.set('n', 'x', '"_x')
+
+-- use <Del> to escape everything
+
+keymap.set('n', '<Del>', '<Esc>')
+keymap.set('v', '<Del>', '<Esc>gV')
+keymap.set('o', '<Del>', '<Esc>')
+keymap.set('c', '<Del>', '<C-C><Esc>')
+keymap.set('i', '<Del>', '<Esc>`^')
+keymap.set('t', '<Del>', '<C-\\><C-n>')
 
 -- Normal --
 -- Better window navigation
