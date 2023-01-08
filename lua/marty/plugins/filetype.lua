@@ -1,9 +1,13 @@
--- In init.lua or filetype.nvim's config file
+local setup, filetype = pcall(require, "filetype")
 
--- Disable sourcing original filetype
+if not setup then
+    return
+end
+
+-- isable sourcing original filetype
 vim.g.did_load_filetypes = 1
 
-require("filetype").setup({
+filetype.setup({
     overrides = {
         extensions = {
             -- Set the filetype of *.pn files to potion
@@ -29,7 +33,7 @@ require("filetype").setup({
                 vim.bo.filetype = "pdf"
                 -- Open in PDF viewer (Skim.app) automatically
                 vim.fn.jobstart(
-                    "open -a skim " .. '"' .. vim.fn.expand("%") .. '"'
+                "open -a skim " .. '"' .. vim.fn.expand("%") .. '"'
                 )
             end,
         },
