@@ -294,6 +294,11 @@ _G.packer_plugins = {
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/vim-wakatime",
     url = "https://github.com/wakatime/vim-wakatime"
   },
+  vimwiki = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/which-key.nvim",

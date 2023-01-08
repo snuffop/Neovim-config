@@ -18,32 +18,24 @@ vim.g.maplocalleader = ","
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Remap for dealing with word wrap
-keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
 -- remap ;
-keymap.set('n', ';', ':', {desc="remap"})
-keymap.set('v', ';', ':', {desc="remap"})
+keymap('n', ';', ':',  opts)
+keymap('v', ';', ':',  opts)
 
 -- Paste last thing yanked, not deleted
-keymap.set('n', ',p', '"0p')
-keymap.set('n', ',P', '"0P')
+keymap('n', ',p', '"0p', opts)
+keymap('n', ',P', '"0P', opts)
 
-keymap.set('n', 'x', '"_x')
+keymap('n', 'x', '"_x', opts)
 
 -- use <Del> to escape everything
 
-keymap.set('n', '<Del>', '<Esc>')
-keymap.set('v', '<Del>', '<Esc>gV')
-keymap.set('o', '<Del>', '<Esc>')
-keymap.set('c', '<Del>', '<C-C><Esc>')
-keymap.set('i', '<Del>', '<Esc>`^')
-keymap.set('t', '<Del>', '<C-\\><C-n>')
+keymap('n', '<Del>', '<Esc>', opts)
+keymap('v', '<Del>', '<Esc>gV', opts)
+keymap('o', '<Del>', '<Esc>', opts)
+keymap('c', '<Del>', '<C-C><Esc>', opts)
+keymap('i', '<Del>', '<Esc>`^', opts)
+keymap('t', '<Del>', '<C-\\><C-n>', opts)
 
 -- Normal --
 -- Better window navigation
@@ -90,8 +82,8 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
