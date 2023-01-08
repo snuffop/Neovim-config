@@ -82,6 +82,7 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
 	-- Treesitter
 	use {
@@ -94,14 +95,14 @@ return packer.startup(function(use)
 
   -- Marty Additions
 
-  use('mboughaba/i3config.vim')
-  use('jeffkreeftmeijer/vim-numbertoggle' )
-  use('neomutt/neomutt.vim')
-  use('christoomey/vim-tmux-navigator' )
-  use('szw/vim-maximizer' )
   use('Glench/Vim-Jinja2-Syntax' )
+  use('christoomey/vim-tmux-navigator' )
   use('francoiscabrol/ranger.vim' )
+  use('jeffkreeftmeijer/vim-numbertoggle' )
+  use('mboughaba/i3config.vim')
+  use('neomutt/neomutt.vim')
   use('rbgrouleff/bclose.vim' )
+  use('szw/vim-maximizer' )
   use('tpope/vim-surround')
   use('wakatime/vim-wakatime')
 
