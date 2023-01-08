@@ -95,6 +95,7 @@ return packer.startup(function(use)
 
   -- Marty Additions
 
+  use("mickael-menu/zk-nvim")
   use('Glench/Vim-Jinja2-Syntax' )
   use('christoomey/vim-tmux-navigator' )
   use('francoiscabrol/ranger.vim' )
