@@ -294,6 +294,11 @@ _G.packer_plugins = {
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/vim-wakatime",
     url = "https://github.com/wakatime/vim-wakatime"
   },
+  ["vim-zettel"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/vim-zettel",
+    url = "https://github.com/michal-h21/vim-zettel"
+  },
   vimwiki = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/vimwiki",
