@@ -31,6 +31,7 @@ return packer.startup(function(use)
   -- Package manager
   use("wbthomason/packer.nvim")
 
+  use("goolord/alpha-nvim")
   -- LSP Configuration & Plugins
   use({
     'neovim/nvim-lspconfig',

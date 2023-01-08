@@ -1,0 +1,17 @@
+require("marty.plugins-setup")
+require("marty.core.options")
+require("marty.core.keymap")
+require("marty.core.autocommand")
+require("marty.plugins.whichkey")
+require("marty.plugins.nvim-tree")
+require("marty.plugins.dracula")
+require("marty.plugins.comment")
+require("marty.plugins.cmp")
+require("marty.plugins.filetype")
+require("marty.plugins.lsp")
+require("marty.plugins.lualine")
+require("marty.plugins.ranger")
+require("marty.plugins.telescope")
+require("marty.plugins.treesitter")
+
+-- vim: ts=2 sts=2 sw=2 et 

@@ -1,17 +1,21 @@
-require("marty.plugins-setup")
-require("marty.core.options")
-require("marty.core.keymap")
-require("marty.core.autocommand")
-require("marty.plugins.whichkey")
-require("marty.plugins.nvim-tree")
-require("marty.plugins.dracula")
-require("marty.plugins.comment")
-require("marty.plugins.cmp")
-require("marty.plugins.filetype")
-require("marty.plugins.lsp")
-require("marty.plugins.lualine")
-require("marty.plugins.ranger")
-require("marty.plugins.telescope")
-require("marty.plugins.treesitter")
-
--- vim: ts=2 sts=2 sw=2 et 
+require "marty.options"
+require "marty.keymaps"
+require "marty.plugins"
+require "marty.colorscheme"
+require "marty.cmp"
+require "marty.lsp"
+require "marty.telescope"
+require "marty.gitsigns"
+require "marty.treesitter"
+require "marty.autopairs"
+require "marty.comment"
+require "marty.nvim-tree"
+require "marty.bufferline"
+require "marty.lualine"
+require "marty.toggleterm"
+require "marty.project"
+require "marty.impatient"
+require "marty.indentline"
+require "marty.alpha"
+require "marty.whichkey"
+require "marty.autocommands"
