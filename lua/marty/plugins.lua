@@ -92,6 +92,19 @@ return packer.startup(function(use)
 	-- Git
 	use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
 
+  -- Marty Additions
+
+  use('mboughaba/i3config.vim')
+  use('jeffkreeftmeijer/vim-numbertoggle' )
+  use('neomutt/neomutt.vim')
+  use('christoomey/vim-tmux-navigator' )
+  use('szw/vim-maximizer' )
+  use('Glench/Vim-Jinja2-Syntax' )
+  use('francoiscabrol/ranger.vim' )
+  use('rbgrouleff/bclose.vim' )
+  use('tpope/vim-surround')
+  use('wakatime/vim-wakatime')
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

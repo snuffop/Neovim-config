@@ -84,10 +84,20 @@ _G.packer_plugins = {
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["Vim-Jinja2-Syntax"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/Vim-Jinja2-Syntax",
+    url = "https://github.com/Glench/Vim-Jinja2-Syntax"
+  },
   ["alpha-nvim"] = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
+  },
+  ["bclose.vim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/bclose.vim",
+    url = "https://github.com/rbgrouleff/bclose.vim"
   },
   ["bufferline.nvim"] = {
     loaded = true,
@@ -134,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["i3config.vim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/i3config.vim",
+    url = "https://github.com/mboughaba/i3config.vim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -158,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neomutt.vim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/neomutt.vim",
+    url = "https://github.com/neomutt/neomutt.vim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -214,6 +234,11 @@ _G.packer_plugins = {
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  ["ranger.vim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/ranger.vim",
+    url = "https://github.com/francoiscabrol/ranger.vim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -238,6 +263,31 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-maximizer"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/vim-maximizer",
+    url = "https://github.com/szw/vim-maximizer"
+  },
+  ["vim-numbertoggle"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/vim-numbertoggle",
+    url = "https://github.com/jeffkreeftmeijer/vim-numbertoggle"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["vim-wakatime"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/vim-wakatime",
+    url = "https://github.com/wakatime/vim-wakatime"
   },
   ["which-key.nvim"] = {
     loaded = true,
