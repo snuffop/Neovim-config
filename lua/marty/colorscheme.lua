@@ -1,6 +1,15 @@
-local colorscheme = "tokyonight"
+local status, onedark = pcall(require, "onedark")
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
+if not status then
   return
 end
+
+onedark.setup {
+  style = 'deep',
+  lualine = {
+    transparent = true,
+  },
+}
+
+onedark.load()
+

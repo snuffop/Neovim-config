@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["hop.nvim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
+  },
   ["i3config.vim"] = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/i3config.vim",
@@ -173,6 +178,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["mini.align"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/mini.align",
+    url = "https://github.com/echasnovski/mini.align"
+  },
+  ["mini.nvim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/mini.nvim",
+    url = "https://github.com/echasnovski/mini.nvim"
   },
   ["neomutt.vim"] = {
     loaded = true,
@@ -218,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

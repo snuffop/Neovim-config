@@ -176,7 +176,8 @@ local mappings = {
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
-    h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    h = { "<cmd>nohlsearch<cr>", "No Highlight" },
+    j = { "<cmd>HopChar2<cr>", "HOP Jump 2 char"},
   },
 
   t = {
