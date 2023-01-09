@@ -1,6 +1,5 @@
-local status_ok, mini = pcall(require, "mini")
-local status_ok, miniAlign = pcall(require, "mini.align")
-if not status_ok then
+local mini_align_status_ok, miniAlign = pcall(require, "mini.align")
+if not mini_align_status_ok then
   return
 end
 

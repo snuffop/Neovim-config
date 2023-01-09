@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-rg"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/cmp-rg",
+    url = "https://github.com/lukas-reineke/cmp-rg"
+  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
@@ -163,6 +168,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -214,6 +229,11 @@ _G.packer_plugins = {
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-rg"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/nvim-rg",
+    url = "https://github.com/duane9/nvim-rg"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -259,10 +279,20 @@ _G.packer_plugins = {
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/ranger.vim",
     url = "https://github.com/francoiscabrol/ranger.vim"
   },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/home/marty/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope-tabs"] = {
+    loaded = true,
+    path = "/home/marty/.local/share/nvim/site/pack/packer/start/telescope-tabs",
+    url = "https://github.com/LukasPietzschmann/telescope-tabs"
   },
   ["telescope.nvim"] = {
     loaded = true,

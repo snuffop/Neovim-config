@@ -82,7 +82,7 @@ local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["/"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 
   b = {
     name = "Buffers",
@@ -95,6 +95,7 @@ local mappings = {
     f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files" },
     r = { "<cmd>Ranger<CR>", "Ranger File Manager" },
     s = { "<cmd>up<CR>", "Save" },
+    b = { "<cmd>Telescope file_browser", "Telescope File Browser"},
   },
 
   p = {
@@ -170,7 +171,8 @@ local mappings = {
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    c = { "<cmd>:noh<cr><cr>", "Search Clear"},
+    C = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
