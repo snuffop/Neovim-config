@@ -87,3 +87,6 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- G keys --
+keymap("n", "gF", "<cmd>Lspsaga lsp_finder<cr>", term_opts)
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", term_opts)
